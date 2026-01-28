@@ -322,7 +322,7 @@ void ExportRoom(UndertaleRoom room)
     var gmx = new XDocument(
         new XComment(gmxDeclaration),
         new XElement("room",
-            new XElement("caption", room.Caption.Content),
+            new XElement("caption", room.Caption != null ? room.Caption.Content : ""),
             new XElement("width", room.Width.ToString()),
             new XElement("height", room.Height.ToString()),
             new XElement("vsnap", "32"),
